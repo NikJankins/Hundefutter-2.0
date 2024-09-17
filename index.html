@@ -1,0 +1,190 @@
+<div class="container">
+    <header>
+        <h1>Hundefutter Vergleichstest 2024</h1>
+        <p>Finden Sie das beste Futter für Ihren Hund basierend auf Preis, Qualität und Eignung für verschiedene Rassen.</p>
+    </header>
+
+    <section>
+        <h2>Kriterien für den Hundefuttervergleich</h2>
+        <p>
+            Um das beste Hundefutter zu finden, wurden folgende Kriterien untersucht:
+        </p>
+        <ul>
+            <li><strong>Gesundheitliche Eignung:</strong> Nährstoffgehalt, Zutatenqualität und spezielle Bedürfnisse wie Allergien oder Gelenkgesundheit.</li>
+            <li><strong>Preis-Leistungs-Verhältnis:</strong> Preis pro Kilogramm, Verpackungsgrößen und das Markenvertrauen.</li>
+            <li><strong>Hochwertigkeit:</strong> Proteinquellen, Getreidefreiheit und die Verwendung biologischer oder naturbelassener Zutaten.</li>
+            <li><strong>Rassespezifische Eignung:</strong> Berücksichtigung der Größe, Aktivität und besonderen Rasseanforderungen.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Hundefutter Tabelle</h2>
+        <p>Im Folgenden sehen Sie eine Übersicht der analysierten Hundefutterprodukte. Sie können die Protein- und Fettanteile, den Preis und die Eignung für bestimmte Hunderassen vergleichen.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Marke</th>
+                    <th>Protein (%)</th>
+                    <th>Fett (%)</th>
+                    <th>Preis pro kg (€)</th>
+                    <th>Getreidefrei</th>
+                    <th>Bio</th>
+                    <th>Empfohlene Rassen</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Daten werden dynamisch eingefügt -->
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Rassespezifische Empfehlungen</h2>
+        <p>Wählen Sie eine Hunderasse aus, um zu sehen, welches Futter für sie am besten geeignet ist:</p>
+        <div class="select-rasse">
+            <label for="rassen">Wähle eine Hunderasse:</label>
+            <select id="rassen" onchange="showRecommendation()">
+                <option value="">Bitte auswählen</option>
+                <option value="Deutscher Schäferhund">Deutscher Schäferhund</option>
+                <option value="Labrador Retriever">Labrador Retriever</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Border Collie">Border Collie</option>
+                <option value="Mischrassen">Mischrassen (weniger aktiv)</option>
+                <option value="Allergiker">Allergiker (z.B. Bulldoggen)</option>
+            </select>
+        </div>
+        <div id="recommendation" class="result">
+            <!-- Rassespezifische Empfehlungen werden hier angezeigt -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Ergebnisse und Empfehlungen</h2>
+        <p>Basierend auf den oben genannten Kriterien haben wir die folgenden Futterarten als beste Optionen identifiziert:</p>
+
+        <h3>Das gesündeste Futter</h3>
+        <p><strong>Orijen Original:</strong> Mit 38% Protein und 18% Fett bietet es das hochwertigste Nährstoffprofil. Es ist ideal für aktive Hunde und enthält nur natürliche Zutaten ohne Getreide.</p>
+
+        <h3>Das günstigste Futter</h3>
+        <p><strong>Pedigree Adult:</strong> Mit einem Preis von nur 3,20 € pro Kilogramm ist es das preiswerteste, enthält jedoch mehr Füllstoffe und geringere Fleischanteile, weshalb es für weniger aktive Hunde geeignet ist.</p>
+
+        <h3>Das hochwertigste Futter</h3>
+        <p><strong>Acana Grasslands:</strong> Neben einem hohen Nährwertprofil (31% Protein, 16% Fett) stammt es aus regionalen Zutaten, ist getreidefrei und hat ein gutes Preis-Leistungs-Verhältnis für aktive Hunde.</p>
+
+        <h3>Rassespezifische Empfehlungen</h3>
+        <ul>
+            <li>Für kleinere Hunderassen wie <strong>Chihuahua</strong> und <strong>Shih Tzu</strong> ist <strong>Terra Canis</strong> ideal aufgrund der natürlichen und biologischen Zutaten.</li>
+            <li><strong>Deutsche Schäferhunde</strong> und größere, aktivere Hunde profitieren von <strong>Royal Canin</strong> und <strong>Orijen</strong>, die gezielt für große, sportliche Rassen entwickelt wurden.</li>
+            <li><strong>Labrador Retriever</strong> und Hunde mit empfindlichem Magen kommen gut mit <strong>Wolfsblut Wild Duck</strong> zurecht, das getreidefrei und leicht verdaulich ist.</li>
+        </ul>
+    </section>
+</div>
+
+<script>
+    // Daten des Hundefutters
+    const futterDaten = [
+        {
+            marke: 'Royal Canin',
+            protein: '28%',
+            fett: '15%',
+            preis: '5.90',
+            getreidefrei: 'Nein',
+            bio: 'Nein',
+            rassen: 'Deutscher Schäferhund, Pudel'
+        },
+        {
+            marke: 'Wolfsblut Wild Duck',
+            protein: '24%',
+            fett: '13%',
+            preis: '8.50',
+            getreidefrei: 'Ja',
+            bio: 'Nein',
+            rassen: 'Labrador, Retriever'
+        },
+        {
+            marke: 'Josera SensiPlus',
+            protein: '26%',
+            fett: '14%',
+            preis: '4.70',
+            getreidefrei: 'Nein',
+            bio: 'Nein',
+            rassen: 'Alle Rassen (besonders sensibel)'
+        },
+        {
+            marke: 'Pedigree Adult',
+            protein: '21%',
+            fett: '12%',
+            preis: '3.20',
+            getreidefrei: 'Nein',
+            bio: 'Nein',
+            rassen: 'Mischrassen, weniger aktive Hunde'
+        },
+        {
+            marke: 'Terra Canis Classic',
+            protein: '10%',
+            fett: '6%',
+            preis: '9.90',
+            getreidefrei: 'Ja',
+            bio: 'Ja',
+            rassen: 'Chihuahua, Shih Tzu'
+        },
+        {
+            marke: 'Rinti Kennerfleisch',
+            protein: '12%',
+            fett: '8%',
+            preis: '4.50',
+            getreidefrei: 'Ja',
+            bio: 'Nein',
+            rassen: 'Spaniel, Dackel'
+        },
+        {
+            marke: 'Orijen Original',
+            protein: '38%',
+            fett: '18%',
+            preis: '12.50',
+            getreidefrei: 'Ja',
+            bio: 'Nein',
+            rassen: 'Alle aktiven und großen Rassen'
+        },
+        {
+            marke: 'Acana Grasslands',
+            protein: '31%',
+            fett: '16%',
+            preis: '10.20',
+            getreidefrei: 'Ja',
+            bio: 'Nein',
+            rassen: 'Border Collie, Australian Shepherd'
+        }
+    ];
+
+    // Füge Daten in die Tabelle ein
+    const tableBody = document.getElementById('table-body');
+    futterDaten.forEach(futter => {
+        const row = `<tr>
+            <td>${futter.marke}</td>
+            <td>${futter.protein}</td>
+            <td>${futter.fett}</td>
+            <td>${futter.preis} €</td>
+            <td>${futter.getreidefrei}</td>
+            <td>${futter.bio}</td>
+            <td>${futter.rassen}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
+
+    // Rassespezifische Empfehlungen anzeigen
+    const rassenEmpfehlungen = {
+        'Deutscher Schäferhund': 'Empfohlenes Futter: Royal Canin Breed – Speziell für große Rassen, unterstützt Gelenke und Muskeln.',
+        'Labrador Retriever': 'Empfohlenes Futter: Wolfsblut Wild Duck – Getreidefrei, geeignet für empfindliche Hunde.',
+        'Chihuahua': 'Empfohlenes Futter: Terra Canis Classic – Kleinere Futtermengen, biologisch hochwertig.',
+        'Border Collie': 'Empfohlenes Futter: Acana Grasslands – Hoher Protein- und Fettgehalt für aktive Hunde.',
+        'Mischrassen': 'Empfohlenes Futter: Pedigree Adult – Preiswert, ausreichende Nährstoffe für weniger aktive Hunde.',
+        'Allergiker': 'Empfohlenes Futter: Forthglade Grain Free – Hypoallergen, getreidefrei, geeignet für empfindliche Haut.'
+    };
+
+    function showRecommendation() {
+        const selectedRasse = document.getElementById('rassen').value;
+        const recommendationDiv = document.getElementById('recommendation');
+        recommendationDiv.innerHTML = rassenEmpfehlungen[selectedRasse] || 'Bitte wähle eine Hunderasse aus, um die Empfehlung zu sehen.';
+    }
+</script>
